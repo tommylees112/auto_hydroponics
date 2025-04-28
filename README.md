@@ -45,3 +45,20 @@ Edit `config.py` to set:
    - Check weather conditions
    - Control watering based on weather and schedule
 
+
+# System Architecture
+
+```text
++-------------------+         +-------------------+         +-------------------+
+|                   |         |                   |         |                   |
+|  Weather API      |<------->|   ESP32 (WiFi)    |<------->|  Relay + Pump     |
+|  (Internet)       |         |  MicroPython      |         |  (Watering)       |
+|                   |         |                   |         |                   |
++-------------------+         +-------------------+         +-------------------+
+                                    ^
+                                    |
+                                    v
+                        +-----------------------+
+                        | Soil/Rain Sensors     |
+                        +-----------------------+
+                  ```
